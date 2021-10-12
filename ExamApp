@@ -1,0 +1,19 @@
+const fromModule = require('./ExamModule');
+const orderEndPoint = ('/orders')
+
+function getInfo(endPoint) {
+    fromModule.getData(endPoint)
+        .then(myData => {
+            myData.forEach(orderObj => {
+                console.log(orderObj)
+            }) //console.log(myData);
+        })
+        .catch(error => {
+            console.log(error);
+        })
+}
+
+//1
+getInfo(orderEndPoint)
+//2
+fromModule.calcTotalRevenue(orderEndPoint)
